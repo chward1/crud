@@ -17,7 +17,6 @@ function appendNewTweet(tweet) {
     $('#tweets-target').prepend(newTweet);
 }
 
-
 $('#tweet').click(function () {
     $.ajax({
         type: "POST",

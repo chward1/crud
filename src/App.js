@@ -43,13 +43,13 @@ const App = () => {
 
           <nav id="nav" className="navbar navbar-expand-md navbar-light fixed-top">
             <div className="container-fluid">
-              <a className="navbar-brand d-block d-sm-none" id="brand" href="#">Christina Ward</a>
+              <Link to="/" className="navbar-brand d-block d-sm-none" id="brand" >Christina Ward</Link>
               <button onClick={() => handleOpenCloseNav()} className="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
               </button>
 
 
-              <div class="collapse navbar-collapse" id="navbarCollapse">
+              <div className="collapse navbar-collapse" id="navbarCollapse">
                 <ul className="navbar-nav mr-auto">
                   <li className="nav-item">
                     <a className="nav-link" href="#aboutMe">About Me</a>
@@ -67,8 +67,7 @@ const App = () => {
                 <div className="d-none d-md-block d-lg-block d-xl-block">
                   <ul className="navbar-nav">
                     <li className="nav-item">
-                      <a className="navbar-brand" href="#">Christina Ward
-          </a>
+                      <Link to="/" className="navbar-brand">Christina Ward</Link>
                     </li>
                   </ul>
                 </div>

@@ -18,13 +18,17 @@ body {
 
 /*NAVIGATION BAR STYLES*/
 
+#cafe-header header{
+  margin-top: 100px;
+}
+
 header {
   height: 69px;
   width: 100%;
   top:0;
   z-index: 1;
   border-bottom: 1px solid seashell;
-  position: fixed;
+  position: static;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -85,6 +89,12 @@ header {
   background-size: cover;
   align-items: center;
   margin: auto;
+}
+
+#mission-target {
+  font-family: "Helvetica", Arial, sans-serif;
+  font-size: 22px;
+  line-height: normal;
 }
 
 @media screen and (max-width: 1200px){

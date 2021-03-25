@@ -4,7 +4,7 @@ import '../styles/cafeProjectStyles/style.css';
 const CafeProject = () => {
     return (
         <React.Fragment>
-            <header>
+            <header id="cafe-header" className="header">
                 <img className="logo" src="https://content.codecademy.com/courses/freelance-1/unit-4/img-tea-cozy-logo.png" alt=" Tea Cozy Logo" />
                 <nav>
                     <ul className="navigation">
@@ -16,7 +16,7 @@ const CafeProject = () => {
             </header>
 
             <a href="#mission-target" id="mission-target"></a>
-            <section className="mission-container">
+            <section className="mission-container" id="mission-section">
                 <div className="mission-statement-container">
                     <h2>Our Mission</h2>
                     <h4>Handpicked, Artisanally Curated, Free Range, Sustainable, Small Batch, Fair Trade, Organic Tea</h4>
@@ -71,19 +71,16 @@ const CafeProject = () => {
                 <div className="address-container">
                     <h3>Downtown</h3>
                     <h4>384 West 4th St</h4>
-                    <h4>Suite 108</h4>
                     <h4>Portland, Maine</h4>
                 </div>
                 <div className="address-container">
                     <h3>East Bayside</h3>
                     <h4>3433 Phisherman's Avenue</h4>
-                    <h4>(Northwest Corner)</h4>
                     <h4>Portland, Maine</h4>
                 </div>
                 <div className="address-container">
                     <h3>Oakdale</h3>
                     <h4>515 Crescent Avenue</h4>
-                    <h4>Second Floor</h4>
                     <h4>Portland, Maine</h4>
                 </div>
             </section>

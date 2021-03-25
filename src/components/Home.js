@@ -5,8 +5,45 @@ import 'popper.js/dist/popper.min.js'
 import portrait from '../images/portrait.jpg'
 import penny from '../images/penny.jpg'
 import { Link } from 'react-router-dom'
+import teaBackground from '../images/teaBackground.jpg'
+import { useState } from 'react'
+import axios from 'axios';
+
 
 function Home() {
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [subject, setSubject] = useState('');
+    const [message, setMessage] = useState('');
+
+    const submitEmail = (e) => {
+        e.preventDefault();
+        axios({
+            method: "POST",
+            url: "http://localhost:3001/send",
+            data: { name, email, subject, message }
+        }).then((response) => {
+            debugger;
+
+            if (response.data.status === 'success') {
+                alert("Message Sent.");
+                resetForm();
+            } else if (response.data.status === 'fail') {
+                alert("Message failed to send.")
+            }
+        })
+    }
+
+    const resetForm = () => {
+        setName('');
+        setEmail('');
+        setSubject('');
+        setMessage('');
+    }
+
+
+
     return (
 
         <div>
@@ -29,8 +66,8 @@ function Home() {
                     <div className="row">
                         <Link to="/cafeproject">
                             <div className="col-lg-4">
-                                <img className="rounded-circle" src="https://content.codecademy.com/courses/freelance-1/unit-4/img-mission-background.jpg" alt="Tea leaves" width="140" height="140" />
-                                <h2>Cafe Landing Page</h2>
+                                <img className="rounded-circle" src={teaBackground} alt="Tea leaves" width="140" height="140" />
+                                <h2>Cafe Project</h2>
                                 <p>Exercise in CSS3 and fun with formatting.</p>
                             </div>
                         </Link>
@@ -66,25 +103,25 @@ function Home() {
                     <div className="col-md-7 order-md-12">
                         <h2 className="featurette-heading">Contact Me</h2>
                         <p className="lead">Do you want to work with me? I would love to hear from you!</p>
-                        {/* <form id="contact-form" onSubmit={this.submitEmail.bind(this)} method="POST">
-              <div className="form-group">
-                <div className="row">
-                  <div className="col-med-6">
-                    <input placeholder="Name" id="name" type="text" className="form-control" required value={this.state.name} onChange={this.onNameChange.bind(this)} />
-                  </div>
-                  <div className="col-med-6">
-                    <input placeholder="Email" id="email" type="email" className="form-control" required value={this.state.email} onChange={this.onEmailChange.bind(this)} />
-                  </div>
-                </div>
-              </div>
-              <div className="form-group">
-                <input placeholder="Subject" id="subject" type="text" className="form-control" required value={this.state.subject} onChange={this.onSubjectChange.bind(this)} />
-              </div>
-              <div className="form-group">
-                <textarea id="message" className="form-control" rows="1" required value={this.state.message} onChange={this.onMsgChange.bind(this)}/>
-              </div>
-                <button type="submit" className="primary-btn submit">Submit</button>
-            </form> */}
+                        <form id="contact-form" onSubmit={(e) => submitEmail(e)} method="POST">
+                            <div className="form-group">
+                                <div className="row">
+                                    <div className="col-med-6">
+                                        <input placeholder="Name" id="name" type="text" className="form-control" required value={name} onChange={(e) => setName(e.target.value)} />
+                                    </div>
+                                    <div className="col-med-6">
+                                        <input placeholder="Email" id="email" type="email" className="form-control" required value={email} onChange={(e) => setEmail(e.target.value)} />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <input placeholder="Subject" id="subject" type="text" className="form-control" required value={subject} onChange={(e) => setSubject(e.target.value)} />
+                            </div>
+                            <div className="form-group">
+                                <textarea id="message" className="form-control" rows="1" required value={message} onChange={(e) => setMessage(e.target.value)} />
+                            </div>
+                            <button type="submit" className="primary-btn submit">Submit</button>
+                        </form>
                     </div>
                 </div>
 

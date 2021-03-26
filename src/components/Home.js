@@ -10,6 +10,7 @@ import { useState } from 'react'
 import axios from 'axios';
 
 
+
 function Home() {
 
     const [name, setName] = useState('');
@@ -24,10 +25,8 @@ function Home() {
             url: "http://localhost:3001/send",
             data: { name, email, subject, message }
         }).then((response) => {
-            debugger;
 
             if (response.data.status === 'success') {
-                alert("Message Sent.");
                 resetForm();
             } else if (response.data.status === 'fail') {
                 alert("Message failed to send.")
@@ -62,9 +61,10 @@ function Home() {
                     </div>
                 </div>
                 <hr className="featurette-divider"></hr>
-                <div className="container marketing">
+                <div className="container marketing" id="">
                     <div className="row">
-                        <Link to="/cafeproject">
+                        
+                        <Link to="/cafeproject" className="text-decoration-none link-secondary">
                             <div className="col-lg-4">
                                 <img className="rounded-circle" src={teaBackground} alt="Tea leaves" width="140" height="140" />
                                 <h2>Cafe Project</h2>
@@ -103,34 +103,28 @@ function Home() {
                     <div className="col-md-7 order-md-12">
                         <h2 className="featurette-heading">Contact Me</h2>
                         <p className="lead">Do you want to work with me? I would love to hear from you!</p>
-                        <form id="contact-form" onSubmit={(e) => submitEmail(e)} method="POST">
+
+                        <form id="contact-form" onSubmit={(e) => submitEmail(e)} method="POST" className="pb-5">
                             <div className="form-group">
                                 <div className="row">
-                                    <div className="col-med-6">
+                                    <div className="col-med-6 pb-1">
                                         <input placeholder="Name" id="name" type="text" className="form-control" required value={name} onChange={(e) => setName(e.target.value)} />
                                     </div>
-                                    <div className="col-med-6">
+                                    <div className="col-med-6 pb-1">
                                         <input placeholder="Email" id="email" type="email" className="form-control" required value={email} onChange={(e) => setEmail(e.target.value)} />
                                     </div>
                                 </div>
                             </div>
-                            <div className="form-group">
+                            <div className="form-group pb-1">
                                 <input placeholder="Subject" id="subject" type="text" className="form-control" required value={subject} onChange={(e) => setSubject(e.target.value)} />
                             </div>
-                            <div className="form-group">
-                                <textarea id="message" className="form-control" rows="1" required value={message} onChange={(e) => setMessage(e.target.value)} />
+                            <div className="form-group pb-2">
+                                <textarea id="message" className="form-control" rows="5" required value={message} onChange={(e) => setMessage(e.target.value)} />
                             </div>
-                            <button type="submit" className="primary-btn submit">Submit</button>
+                            <button type="submit" className="btn-secondary btn-sm">Submit</button>
                         </form>
                     </div>
                 </div>
-
-                <hr className="featurette-divider" />
-                <footer className="container">
-                    <p>Christina.harney@gmail.com</p>
-                    <p className="float-end"><a href="#">Back to top</a></p>
-
-                </footer>
             </main>
         </div >
 

@@ -19,18 +19,16 @@ app.post('/send', (req, res, next) => {
     const content = `name: ${name} \n email: ${email} \n subject: ${subject} \n message: ${message} `
     const mail = {
         from: name,
-        to: config.userName,
+        to: config.user,
         subject,
         text: content
     }
 
     const transporter = nodemailer.createTransport({
-        host: config.host,
-        port: 465,
-        secure: false,
+        service: 'Gmail',
         auth: {
-            user: config.userName,
-            pass: config.password,
+            type: 'OAuth2',
+            ...config
         }
     });
 

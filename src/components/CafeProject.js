@@ -1,11 +1,12 @@
 import React from 'react';
 import '../styles/cafeProjectStyles/style.css';
+import teaCozyLogo from '../images/teaCozyLogo.jpg';
 
 const CafeProject = () => {
     return (
         <React.Fragment>
             <header id="cafe-header" className="header">
-                <img className="logo" src="https://content.codecademy.com/courses/freelance-1/unit-4/img-tea-cozy-logo.png" alt=" Tea Cozy Logo" />
+                <img className="logo" src={teaCozyLogo} alt=" Tea Cozy Logo" />
                 <nav>
                     <ul className="navigation">
                         <li><a href="#mission-target">Mission</a></li>
@@ -19,12 +20,12 @@ const CafeProject = () => {
             <section className="mission-container" id="mission-section">
                 <div className="mission-statement-container">
                     <h2>Our Mission</h2>
-                    <h4>Handpicked, Artisanally Curated, Free Range, Sustainable, Small Batch, Fair Trade, Organic Tea</h4>
+                    <h4>Handpicked, artisanally curated, free range, sustainable, small batch, fair trade, organic tea</h4>
                 </div>
             </section>
 
             <a href="" id="featured-tea-target"></a>
-            <section className="featured-container">
+            <section id="featured-container" >
                 <div className="featured-statement">
                     <h2>Tea of the Month</h2>
                     <h4>What's Steeping at The Tea Cozy?</h4>
@@ -75,12 +76,12 @@ const CafeProject = () => {
                 </div>
                 <div className="address-container">
                     <h3>East Bayside</h3>
-                    <h4>3433 Phisherman's Avenue</h4>
+                    <h4>3433 Phish Ave</h4>
                     <h4>Portland, Maine</h4>
                 </div>
                 <div className="address-container">
                     <h3>Oakdale</h3>
-                    <h4>515 Crescent Avenue</h4>
+                    <h4>515 Crescent Ave</h4>
                     <h4>Portland, Maine</h4>
                 </div>
             </section>
@@ -88,7 +89,7 @@ const CafeProject = () => {
             <section className="contact-container">
                 <h2>The Tea Cozy</h2>
                 <h5>contact@theteacozy.com</h5>
-                <h4>917-55-8904</h4>
+                <h4>123-555-5555</h4>
             </section>
 
             <footer>

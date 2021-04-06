@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 import teaBackground from '../images/teaBackground.jpg'
 import { useState } from 'react'
 import axios from 'axios';
+import pointReyes from '../images/pointReyes.jpeg'
 
 
 
@@ -49,8 +50,8 @@ function Home() {
 
             <main>
                 <div className="row featurette first justify-content-evenly">
-                    <div className="col-xs-12 col-md-4">
-                        <h2 className="featurette-heading">Hi! I'm Christina.</h2>
+                    <div className="col-xs-12 col-md-4 pb-8">
+                        <h2 className="featurette-heading mt-4">Hi! I'm Christina.</h2>
                         <p className="lead">I am software developer based out of northern California.</p>
                         <p className="lead">I create beautiful and functional websites using HTML5, CSS3, JavaScript, Bootstrap5. Check out some examples of my work below.</p>
                     </div>
@@ -61,32 +62,32 @@ function Home() {
                     </div>
                 </div>
                 <hr className="featurette-divider"></hr>
-                <div className="container marketing" id="">
-                    <div className="row">
-                        
-                        <Link to="/cafeproject" className="text-decoration-none link-secondary">
-                            <div className="col-lg-4">
-                                <img className="rounded-circle" src={teaBackground} alt="Tea leaves" width="140" height="140" />
-                                <h2>Cafe Project</h2>
-                                <p>Exercise in CSS3 and fun with formatting.</p>
-                            </div>
-                        </Link>
-                        <div className="col-lg-4">
-                            <img className="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" />
-                            <h2>E-commerce</h2>
-                            <p>Sample online store for a upcoming landscape photographer.</p>
+                <div class="container marketing">
+                    <div class="row">
+                        <div class="col-lg-4"><Link to="/cafeproject" className="text-decoration-none link-secondary">
+                            <img className="rounded-circle" src={teaBackground} alt="Tea leaves" width="140" height="140" />
+                            <h2>Cafe Project</h2>
+                            <p>Exercise in CSS3 and fun with formatting.</p></Link>
                         </div>
-                        <div className="col-lg-4">
-                            <img className="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" />
+
+
+                        <div class="col-lg-4"><a href="#" className="text-decoration-none link-secondary">
+                            <img className="rounded-circle" src={pointReyes} alt="" width="140" height="140" />
+                            <h2>E-Commerce</h2>
+                            <p>E-Commerce sandbox featuring an upcoming photographer.</p></a>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
                             <h2>Style Guide</h2>
                             <p>Sample style guide for Tina in Progress.</p>
                         </div>
                     </div>
                 </div>
 
-                <hr className="featurette-divider"></hr>
+                <hr className="featurette-divider" id="aboutMe"></hr>
 
-                <div className="row featurette" id="aboutMe">
+                <div className="row featurette">
                     <div className="col-md-7 order-md-2">
                         <h2 className="featurette-heading">A little more about me...</h2>
                         <p className="lead">I am originally from southern California and now based out of Sebastopol, CA.  I am truly grateful for any time I have to spend time with my family, relax outdoors or play with my puppies (Lucy and our newest addition, puppy Penny - featured left).</p>
@@ -125,7 +126,7 @@ function Home() {
                         </form>
                     </div>
                 </div>
-            </main>
+            </main >
         </div >
 
     );

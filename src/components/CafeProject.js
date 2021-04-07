@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/cafeProjectStyles/style.css';
+import teaCozyLogo from '../images/teaCozyLogo.jpg';
 
 const CafeProject = () => {
     return (

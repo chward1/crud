@@ -103,4 +103,11 @@ dist
 # TernJS port file
 .tern-port
 
+<<<<<<< HEAD
+=======
+# public
+public
+
+# config
+>>>>>>> d41816ea402baf7c9758f5458bd7e315e4f11331
 config.js
